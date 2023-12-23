@@ -1,4 +1,4 @@
-Create Table if not exists products(
+CREATE TABLE IF NOT EXISTS products(
 
 productId int primary key,
 title varchar(200),
