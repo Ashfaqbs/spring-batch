@@ -48,28 +48,21 @@ public class BatchConfig {
 	}
 
 	@Bean
-	public Step steps(JobRepository jobRepository,DataSourceTransactionManager transactionManager)
-	{
-		
-		return new StepBuilder("JobStep", jobRepository).
-				chunk(5,transactionManager).//in how many steps or peices of source data will be go
-				reader().//we have many files to read but we will use flatfileItemReader and need to define a model which will have all the columns in the csv file
-				processor().
-				writer().
-				build();
+	public Step steps(JobRepository jobRepository, DataSourceTransactionManager transactionManager) {
+
+		return new StepBuilder("JobStep", jobRepository).chunk(5, transactionManager).// in how many steps or peices of
+																						// source data will be go
+				reader().// we have many files to read but we will use flatfileItemReader and need to
+							// define a model which will have all the columns in the csv file
+				processor().writer().build();
 	}
 
-	
 	@Bean
-	public FlatFileItemReader<Product> reader()
-	{
-		
-		
-		return new FlatFileItemReaderBuilder<Product>().
-				name("itemReader").
-				resource(new ClassPathResource("data.csv")).
-				delimited().
-				names("productId","title","description","price","discount").targetType(Product.class).build();
-				
+	public FlatFileItemReader<Product> reader() {
+
+		return new FlatFileItemReaderBuilder<Product>().name("itemReader").resource(new ClassPathResource("data.csv"))
+				.delimited().names("productId", "title", "description", "price", "discount").targetType(Product.class)
+				.build();
+
 	}
 }
