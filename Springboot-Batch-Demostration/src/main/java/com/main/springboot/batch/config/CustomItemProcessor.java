@@ -16,6 +16,8 @@ public class CustomItemProcessor implements ItemProcessor<Product, Product> {
 
 		int discount = Integer.parseInt(item.getDiscount());
 
+		Double originalPrice = Double.parseDouble(item.getPrice());
+
 		return null;
 	}
 
