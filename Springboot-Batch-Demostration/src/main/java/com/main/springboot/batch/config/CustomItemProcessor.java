@@ -23,7 +23,7 @@ public class CustomItemProcessor implements ItemProcessor<Product, Product> {
 
 			double finalPrice = originalPrice - discount;
 
-			item.setDiscount(String.valueOf(finalPrice));
+			item.setDiscountedPrice(String.valueOf(finalPrice));
 
 		} catch (Exception exception) {
 			// TODO: handle exception
