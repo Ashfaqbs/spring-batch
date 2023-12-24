@@ -22,7 +22,7 @@ public class BatchConfig {
 		//JobRepository bean here will automatically autowire no need to do a seperate bean, and its implementation 
 		// class will be autowired this for Job meta data
 		
-		//listener where to add this we will have to implement JobExecutionListener and overide before and after methods
+		//listenerto add this we will have to implement JobExecutionListener and overide before and after methods
 		//and then 
 		return new JobBuilder("jobCSV", jobRepository).// name of the job and jobRepository
 				listener(listener)// to listen and do anything when the job starts or the job ends
