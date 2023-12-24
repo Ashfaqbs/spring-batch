@@ -15,6 +15,7 @@ import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import com.main.springboot.batch.model.Product;
@@ -66,7 +67,9 @@ public class BatchConfig {
 		
 		return new FlatFileItemReaderBuilder<Product>().
 				name("itemReader").
-				resource("data.csv")
+				resource(new ClassPathResource("data.csv")).
+				delimited().
+				names("productId")
 				
 	}
 }
