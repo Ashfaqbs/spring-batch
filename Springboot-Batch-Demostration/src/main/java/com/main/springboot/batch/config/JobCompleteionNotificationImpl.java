@@ -28,9 +28,9 @@ public class JobCompleteionNotificationImpl implements JobExecutionListener {
 	public void afterJob(JobExecution jobExecution) {
 
 		if (jobExecution.isRunning()) {
-
+			LOGGER.info("Job is running");
 		} else {
-			LOGGER.info("Job Completed");
+			LOGGER.info("Job completed");
 		}
 
 	}
