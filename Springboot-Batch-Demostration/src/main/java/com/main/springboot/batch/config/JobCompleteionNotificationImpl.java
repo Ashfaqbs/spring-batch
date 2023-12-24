@@ -19,7 +19,7 @@ public class JobCompleteionNotificationImpl implements JobExecutionListener {
 	@Override
 	public void afterJob(JobExecution jobExecution) {
 		// TODO Auto-generated method stub
-		LOGGER.info(String.format(" ", null));
+		LOGGER.info(String.format("", " "));
 		JobExecutionListener.super.afterJob(jobExecution);
 	}
 
