@@ -10,6 +10,7 @@ import org.springframework.batch.core.JobExecutionListener;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -28,7 +29,7 @@ public class BatchConfig {
 		//and then pass the class name i.e JobCompleteionNotificationImpl and it will automatically autowire here as its already 
 		// a componenet and its dependency is already satisfied
 		
-		//3 steps  to give it,actually its a bean so 
+		//3 steps  to give it,actually its a bean so we will define a step bean and pass here 
 		
 		return new JobBuilder("jobCSV", jobRepository).// name of the job and jobRepository
 				listener(listener)// to listen and do anything when the job starts or the job ends
@@ -41,7 +42,7 @@ public class BatchConfig {
 	public Step steps()
 	{
 		
-		
+		return new StepBuilder(null, null)
 	}
 
 }
