@@ -48,7 +48,7 @@ public class BatchConfig {
 		
 		return new StepBuilder("JobStep", jobRepository).
 				chunk(5,transactionManager).//in how many steps or peices of source data will be go
-				reader().
+				reader().//we have many files to read but we will use flatfileItemReader
 				processor().
 				writer().
 				build();
