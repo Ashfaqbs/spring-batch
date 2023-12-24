@@ -23,6 +23,8 @@ public class BatchConfig {
 		
 		return new JobBuilder("jobCSV",jobRepository).//name of the job and jobRepository
 				listener(listener)//to listen and do anything when the job starts or the job ends
+				.start(steps)
+				.build
 		
 	}
 	
