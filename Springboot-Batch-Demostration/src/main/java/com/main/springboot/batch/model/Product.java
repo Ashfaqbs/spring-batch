@@ -64,6 +64,12 @@ public class Product {
 		return "Product [productId=" + productId + ", title=" + title + ", description=" + description + ", price="
 				+ price + ", discount=" + discount + "]";
 	}
+	public String getDiscountedPrice() {
+		return discountedPrice;
+	}
+	public void setDiscountedPrice(String discountedPrice) {
+		this.discountedPrice = discountedPrice;
+	}
 	
 	
 	
