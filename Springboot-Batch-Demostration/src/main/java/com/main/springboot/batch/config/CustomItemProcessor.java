@@ -15,6 +15,9 @@ public class CustomItemProcessor implements ItemProcessor<Product, Product> {
 
 	@Override
 	public Product process(Product item) throws Exception {
+	
+		
+		
 		return null;
 	}
 
