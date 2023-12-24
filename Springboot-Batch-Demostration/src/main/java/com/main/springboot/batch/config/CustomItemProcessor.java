@@ -14,15 +14,15 @@ public class CustomItemProcessor implements ItemProcessor<Product, Product> {
 	@Override
 	public Product process(Product item) throws Exception {
 
-//		int discountPer = Integer.parseInt(item.getDiscount());
-//
-//		double originalPrice = Double.parseDouble(item.getPrice());
-//
-//		double discount = (discountPer / 100) * originalPrice;
-//
-//		double finalPrice = originalPrice - discount;
-//
-//		item.setDiscount(String.valueOf(finalPrice));
+		int discountPer = Integer.parseInt(item.getDiscount());
+
+		double originalPrice = Double.parseDouble(item.getPrice());
+
+		double discount = (discountPer / 100) * originalPrice;
+
+		double finalPrice = originalPrice - discount;
+
+		item.setDiscount(String.valueOf(finalPrice));
 
 		return item;
 	}
