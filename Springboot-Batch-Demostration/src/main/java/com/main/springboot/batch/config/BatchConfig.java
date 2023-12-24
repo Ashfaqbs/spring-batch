@@ -43,7 +43,7 @@ public class BatchConfig {
 	}
 
 	@Bean
-	public Step steps(JobRepository jobRepository,DataSourceTransactionManager transactionManager,)
+	public Step steps(JobRepository jobRepository,DataSourceTransactionManager transactionManager)
 	{
 		
 		return new StepBuilder("JobStep", jobRepository).
