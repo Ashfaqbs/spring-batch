@@ -22,7 +22,7 @@ public class CustomItemProcessor implements ItemProcessor<Product, Product> {
 
 		double finalPrice = originalPrice - discount;
 
-		item.setDiscount(finalPrice);
+		item.setDiscount(String.valueOf(finalPrice));
 
 		return null;
 	}
