@@ -14,15 +14,22 @@ public class CustomItemProcessor implements ItemProcessor<Product, Product> {
 	@Override
 	public Product process(Product item) throws Exception {
 
-		int discountPer = Integer.parseInt(item.getDiscount());
+		try {
+			int discountPer = Integer.parseInt(item.getDiscount());
 
-		double originalPrice = Double.parseDouble(item.getPrice());
+			double originalPrice = Double.parseDouble(item.getPrice());
 
-		double discount = (discountPer / 100) * originalPrice;
+			double discount = (discountPer / 100) * originalPrice;
 
-		double finalPrice = originalPrice - discount;
+			double finalPrice = originalPrice - discount;
 
-		item.setDiscount(String.valueOf(finalPrice));
+			item.setDiscount(String.valueOf(finalPrice));
+		} catch (NumberFormatException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		
 
 		return item;
 	}
