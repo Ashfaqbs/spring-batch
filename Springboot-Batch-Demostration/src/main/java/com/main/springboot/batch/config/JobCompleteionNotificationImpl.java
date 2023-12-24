@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class JobCompleteionNotificationImpl implements JobExecutionListener {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(JobCompleteionNotificationImpl.class);
+	private static  Logger LOGGER = LoggerFactory.getLogger(JobCompleteionNotificationImpl.class);
 
 	@Override
 	public void afterJob(JobExecution jobExecution) {
