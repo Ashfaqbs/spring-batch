@@ -66,6 +66,7 @@ public class BatchConfig {
 		
 		return new FlatFileItemReaderBuilder<Product>().
 				name("itemReader").
+				resource("data.csv")
 				
 	}
 }
