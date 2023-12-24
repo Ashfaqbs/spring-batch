@@ -15,6 +15,10 @@ public class Product {
 	private String description;
 	private String price;
 	private String discount;
+	
+	
+	//new 
+	private String discountedPrice;
 	public Product() {
 		// TODO Auto-generated constructor stub
 	}
