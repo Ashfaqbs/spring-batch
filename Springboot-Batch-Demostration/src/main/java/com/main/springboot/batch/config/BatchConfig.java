@@ -13,6 +13,7 @@ import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 @Configuration
 public class BatchConfig {
@@ -42,12 +43,15 @@ public class BatchConfig {
 	}
 
 	@Bean
-	public Step steps()
+	public Step steps(JobRepository jobRepository,DataSourceTransactionManager transactionManager,)
 	{
 		
 		return new StepBuilder("JobStep", jobRepository).
-				chunk(5)//in how many steps or peices of source data will be go
-				.
+				chunk(5,transactionManager).//in how many steps or peices of source data will be go
+				reader().
+				processor().
+				writer().
+				build();
 	}
 
 }
