@@ -7,6 +7,8 @@
 
 package com.main.springboot.batch.config;
 
-public class JobCompleteionNotificationImpl {
+import org.springframework.batch.core.JobExecutionListener;
+
+public class JobCompleteionNotificationImpl implements JobExecutionListener{
 
 }
