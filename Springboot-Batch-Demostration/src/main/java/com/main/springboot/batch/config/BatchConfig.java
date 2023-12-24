@@ -19,12 +19,14 @@ public class BatchConfig {
 	public Job jobBean(JobRepository jobRepository,JobCompleteionNotificationImpl listener) {
 
 		// IMP Note
+		
 		//JobRepository bean here will automatically autowire no need to do a seperate bean, and its implementation 
 		// class will be autowired this for Job meta data
 		
 		//listener to add this we will have to implement JobExecutionListener and overide before and after methods
 		//and then pass the class name i.e JobCompleteionNotificationImpl and it will automatically autowire here as its already 
 		// a componenet and its dependency is already satisfied
+		
 		return new JobBuilder("jobCSV", jobRepository).// name of the job and jobRepository
 				listener(listener)// to listen and do anything when the job starts or the job ends
 				.start(steps).build(); 
