@@ -10,5 +10,5 @@ package com.main.springboot.batch.model;
 public class Product {
 
 	
-	int productid;
+	int productId;
 }
