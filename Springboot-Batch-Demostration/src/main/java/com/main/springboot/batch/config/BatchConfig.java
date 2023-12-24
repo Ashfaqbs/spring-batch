@@ -20,7 +20,7 @@ public class BatchConfig {
 
 		// IMP Note
 		//JobRepository bean here will automatically autowire no need to do a seperate bean, and its implementation 
-		// class will be autowired
+		// class will be autowired this for Job meta data
 		
 		//listener where to add this we will have to implement JobExecutionListener and overide before and after methods
 		//and then 
