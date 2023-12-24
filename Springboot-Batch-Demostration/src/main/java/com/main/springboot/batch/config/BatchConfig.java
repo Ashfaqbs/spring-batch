@@ -18,26 +18,29 @@ import org.springframework.context.annotation.Configuration;
 public class BatchConfig {
 
 	@Bean
-	public Job jobBean(JobRepository jobRepository,JobCompleteionNotificationImpl listener,Step steps) {
+	public Job jobBean(JobRepository jobRepository, JobCompleteionNotificationImpl listener, Step steps) {
 
 		// IMP Note
-		
-		//1 JobRepository bean here will automatically autowire no need to do a seperate bean, and its implementation 
+
+		// 1 JobRepository bean here will automatically autowire no need to do a
+		// seperate bean, and its implementation
 		// class will be autowired this for Job meta data
-		
-		//2 listener to add this we will have to implement JobExecutionListener and overide before and after methods
-		//and then pass the class name i.e JobCompleteionNotificationImpl and it will automatically autowire here as its already 
+
+		// 2 listener to add this we will have to implement JobExecutionListener and
+		// overide before and after methods
+		// and then pass the class name i.e JobCompleteionNotificationImpl and it will
+		// automatically autowire here as its already
 		// a componenet and its dependency is already satisfied
-		
-		//3 steps  to give it,actually its a bean so we will define a step bean and pass here 
-		
+
+		// 3 steps to give it,actually its a bean so we will define a step bean and pass
+		// here
+
 		return new JobBuilder("jobCSV", jobRepository).// name of the job and jobRepository
 				listener(listener)// to listen and do anything when the job starts or the job ends
-				.start(steps).build(); 
+				.start(steps).build();
 
 	}
-	
-	
+
 	@Bean
 	public Step steps()
 	{
