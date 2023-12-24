@@ -18,7 +18,7 @@ public class BatchConfig {
 	public Job jobBean(JobRepository jobRepository) {
 
 		// IMP Note
-//JobRepository bean here will automatically autowire no need to do a seperate bean, and its implementation 
+		//JobRepository bean here will automatically autowire no need to do a seperate bean, and its implementation 
 		// class will be autowired
 		return new JobBuilder("jobCSV", jobRepository).// name of the job and jobRepository
 				listener(listener)// to listen and do anything when the job starts or the job ends
