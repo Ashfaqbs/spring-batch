@@ -12,6 +12,8 @@ import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.item.ItemProcessor;
+import org.springframework.batch.item.ItemWriter;
+import org.springframework.batch.item.database.JdbcBatchItemWriter;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
 import org.springframework.context.annotation.Bean;
@@ -78,4 +80,11 @@ public class BatchConfig {
 		return new CustomItemProcessor();
 	}
 
+	
+@Bean
+public ItemWriter<Product> itemWriter()
+{
+	new JdbcBatchItemWriter<Product>().sql("");
+}
+	
 }
