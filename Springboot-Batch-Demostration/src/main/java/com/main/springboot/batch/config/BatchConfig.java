@@ -56,8 +56,8 @@ public class BatchConfig {
 	@Bean
 	public Step steps(JobRepository jobRepository, DataSourceTransactionManager transactionManager,
 			FlatFileItemReader<Product> reader, ItemProcessor<Product, Product> itemProcessor// this can be our
-			,ItemWriter<Product>writer																					// customItemProcessor
-																								// as its a bean
+			, ItemWriter<Product> writer // customItemProcessor
+	// as its a bean
 
 	) {
 
@@ -83,14 +83,11 @@ public class BatchConfig {
 		return new CustomItemProcessor();
 	}
 
-	
-@Bean
-public ItemWriter<Product> itemWriter(DataSource dataSource)
-{
-	return new JdbcBatchItemWriterBuilder<Product>().sql("insert into products(productId,title,description,price,discount,discounted_price)values(:productId, :title, :description, :price, :discount, :discountedPrice)").
-	dataSource(dataSource).
-	beanMapped().
-	build();
-}
-	
+	@Bean
+	public ItemWriter<Product> itemWriter(DataSource dataSource) {
+		return new JdbcBatchItemWriterBuilder<Product>().sql(
+				"insert into products(productId,title,description,price,discount,discounted_price)values(:productId, :title, :description, :price, :discount, :discountedPrice)")
+				.dataSource(dataSource).beanMapped().build();
+	}
+
 }
