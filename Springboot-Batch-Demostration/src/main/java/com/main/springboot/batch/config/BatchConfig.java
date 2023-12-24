@@ -20,10 +20,10 @@ public class BatchConfig {
 
 		// IMP Note
 		
-		//JobRepository bean here will automatically autowire no need to do a seperate bean, and its implementation 
+		//1 JobRepository bean here will automatically autowire no need to do a seperate bean, and its implementation 
 		// class will be autowired this for Job meta data
 		
-		//listener to add this we will have to implement JobExecutionListener and overide before and after methods
+		//2 listener to add this we will have to implement JobExecutionListener and overide before and after methods
 		//and then pass the class name i.e JobCompleteionNotificationImpl and it will automatically autowire here as its already 
 		// a componenet and its dependency is already satisfied
 		
