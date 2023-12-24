@@ -16,6 +16,20 @@ public class JobCompleteionNotificationImpl implements JobExecutionListener {
 
 	private static  Logger LOGGER = LoggerFactory.getLogger(JobCompleteionNotificationImpl.class);
 
+	
+	
+	@Override
+	public void beforeJob(JobExecution jobExecution) {
+		// TODO Auto-generated method stub
+
+	
+	
+	}
+	
+	
+	
+	
+	
 	@Override
 	public void afterJob(JobExecution jobExecution) {
 		// TODO Auto-generated method stub
@@ -23,10 +37,6 @@ public class JobCompleteionNotificationImpl implements JobExecutionListener {
 		JobExecutionListener.super.afterJob(jobExecution);
 	}
 
-	@Override
-	public void beforeJob(JobExecution jobExecution) {
-		// TODO Auto-generated method stub
-		JobExecutionListener.super.beforeJob(jobExecution);
-	}
+	
 
 }
