@@ -15,5 +15,4 @@ public class Product {
 	String description;
 	String price;
 	String discount;
-	String
 }
