@@ -24,7 +24,7 @@ public class CustomItemProcessor implements ItemProcessor<Product, Product> {
 
 		item.setDiscount(String.valueOf(finalPrice));
 
-		return null;
+		return item;
 	}
 
 }
