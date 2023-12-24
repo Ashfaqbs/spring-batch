@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 public class BatchConfig {
 
 	@Bean
-	public Job jobBean(JobRepository jobRepository,JobCompleteionNotificationImpl listener) {
+	public Job jobBean(JobRepository jobRepository,JobCompleteionNotificationImpl listener,Step steps) {
 
 		// IMP Note
 		
