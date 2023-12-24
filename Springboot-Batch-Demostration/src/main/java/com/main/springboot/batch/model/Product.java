@@ -10,9 +10,9 @@ package com.main.springboot.batch.model;
 public class Product {
 
 	
-	int productId;
-	String title;
-	String description;
-	String price;
-	String discount;
-}
+	private int productId;
+	private String title;
+	private String description;
+	private String price;
+	private String discount;
+ }
