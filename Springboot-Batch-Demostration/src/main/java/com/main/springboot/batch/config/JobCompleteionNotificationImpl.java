@@ -14,29 +14,21 @@ import org.springframework.stereotype.Component;
 @Component
 public class JobCompleteionNotificationImpl implements JobExecutionListener {
 
-	private static  Logger LOGGER = LoggerFactory.getLogger(JobCompleteionNotificationImpl.class);
+	private static Logger LOGGER = LoggerFactory.getLogger(JobCompleteionNotificationImpl.class);
 
-	
-	
 	@Override
 	public void beforeJob(JobExecution jobExecution) {
 		// TODO Auto-generated method stub
 
-	
-	
+		LOGGER.info("Job started");
+		
 	}
-	
-	
-	
-	
-	
+
 	@Override
 	public void afterJob(JobExecution jobExecution) {
 		// TODO Auto-generated method stub
 		LOGGER.info(String.format("", " "));
 		JobExecutionListener.super.afterJob(jobExecution);
 	}
-
-	
 
 }
