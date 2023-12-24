@@ -26,7 +26,7 @@ public class BatchConfig {
 		//and then 
 		return new JobBuilder("jobCSV", jobRepository).// name of the job and jobRepository
 				listener(listener)// to listen and do anything when the job starts or the job ends
-				.start(steps).build() 
+				.start(steps).build(); 
 
 	}
 	
