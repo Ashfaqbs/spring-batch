@@ -10,7 +10,7 @@ package com.main.springboot.batch.model;
 public class Product {
 
 	
-	private int productId;
+	private String productId;
 	private String title;
 	private String description;
 	private String price;
@@ -22,17 +22,17 @@ public class Product {
 	public Product() {
 		// TODO Auto-generated constructor stub
 	}
-	public Product(int productId, String title, String description, String price, String discount) {
+	public Product(String productId, String title, String description, String price, String discount) {
 		this.productId = productId;
 		this.title = title;
 		this.description = description;
 		this.price = price;
 		this.discount = discount;
 	}
-	public int getProductId() {
+	public String getProductId() {
 		return productId;
 	}
-	public void setProductId(int productId) {
+	public void setProductId(String productId) {
 		this.productId = productId;
 	}
 	public String getTitle() {
