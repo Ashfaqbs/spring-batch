@@ -69,7 +69,7 @@ public class BatchConfig {
 				name("itemReader").
 				resource(new ClassPathResource("data.csv")).
 				delimited().
-				names("productId")
+				names("productId","title","description","price","discount")
 				
 	}
 }
