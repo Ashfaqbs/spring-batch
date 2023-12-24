@@ -15,9 +15,9 @@ public class CustomItemProcessor implements ItemProcessor<Product, Product> {
 	public Product process(Product item) throws Exception {
 
 		try {
-			int discountPer = Integer.parseInt(item.getDiscount());
+			int discountPer = Integer.parseInt(item.getDiscount().trim());
 
-			double originalPrice = Double.parseDouble(item.getPrice());
+			double originalPrice = Double.parseDouble(item.getPrice().trim());
 
 			double discount = (discountPer / 100) * originalPrice;
 
