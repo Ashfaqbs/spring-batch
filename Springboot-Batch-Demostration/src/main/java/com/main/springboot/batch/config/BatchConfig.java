@@ -21,7 +21,7 @@ public class BatchConfig {
 		
 		
 		
-		return JobBuilder("jobCSV",jobRepository)
+		return new JobBuilder("jobCSV",jobRepository).listener(listener)
 		
 	}
 	
