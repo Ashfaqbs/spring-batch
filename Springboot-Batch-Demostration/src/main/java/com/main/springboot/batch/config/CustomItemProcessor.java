@@ -25,9 +25,9 @@ public class CustomItemProcessor implements ItemProcessor<Product, Product> {
 
 			item.setDiscount(String.valueOf(finalPrice));
 
-		} catch (NumberFormatException e) {
+		} catch (Exception exception) {
 			// TODO: handle exception
-			e.printStackTrace();
+			exception.printStackTrace();
 		}
 
 		return item;
