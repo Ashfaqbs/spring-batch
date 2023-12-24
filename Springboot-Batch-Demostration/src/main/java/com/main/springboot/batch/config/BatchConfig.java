@@ -5,6 +5,8 @@
 
 package com.main.springboot.batch.config;
 
+import javax.sql.DataSource;
+
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecutionListener;
 import org.springframework.batch.core.Step;
@@ -83,9 +85,10 @@ public class BatchConfig {
 
 	
 @Bean
-public ItemWriter<Product> itemWriter()
+public ItemWriter<Product> itemWriter(DataSource dataSource)
 {
-	new JdbcBatchItemWriterBuilder<Product>().sql("insert into products(productId,title,description,price,discount,discounted_price)values(:productId, :title, :description, :price, :discount, :discountedPrice)");
+	new JdbcBatchItemWriterBuilder<Product>().sql("insert into products(productId,title,description,price,discount,discounted_price)values(:productId, :title, :description, :price, :discount, :discountedPrice)").
+	dataSource(null)
 }
 	
 }
