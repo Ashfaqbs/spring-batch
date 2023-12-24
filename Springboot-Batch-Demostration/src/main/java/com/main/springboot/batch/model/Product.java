@@ -55,6 +55,11 @@ public class Product {
 	public void setDiscount(String discount) {
 		this.discount = discount;
 	}
+	@Override
+	public String toString() {
+		return "Product [productId=" + productId + ", title=" + title + ", description=" + description + ", price="
+				+ price + ", discount=" + discount + "]";
+	}
 	
 	
 	
