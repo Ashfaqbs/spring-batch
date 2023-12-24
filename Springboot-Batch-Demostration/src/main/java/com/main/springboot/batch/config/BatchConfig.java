@@ -56,7 +56,7 @@ public class BatchConfig {
 	@Bean
 	public Step steps(JobRepository jobRepository, DataSourceTransactionManager transactionManager,
 			FlatFileItemReader<Product> reader, ItemProcessor<Product, Product> itemProcessor// this can be our
-																								// customItemProcessor
+			,ItemWriter<Product>writer																					// customItemProcessor
 																								// as its a bean
 
 	) {
@@ -65,7 +65,7 @@ public class BatchConfig {
 																						// source data will be go
 				reader(reader).// we have many files to read but we will use flatfileItemReader and need to
 								// define a model which will have all the columns in the csv file
-				processor(itemProcessor).writer().build();
+				processor(itemProcessor).writer(writer).build();
 	}
 
 	@Bean
