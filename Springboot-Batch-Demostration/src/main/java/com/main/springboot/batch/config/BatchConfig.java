@@ -85,7 +85,7 @@ public class BatchConfig {
 @Bean
 public ItemWriter<Product> itemWriter()
 {
-	new JdbcBatchItemWriterBuilder<Product>().sql("insert into products(productId,title,description,price,discount,discounted_price)");
+	new JdbcBatchItemWriterBuilder<Product>().sql("insert into products(productId,title,description,price,discount,discounted_price)values(:productId, :title, :description, :price,:discount)");
 }
 	
 }
