@@ -27,6 +27,8 @@ public class BatchConfig {
 		//and then pass the class name i.e JobCompleteionNotificationImpl and it will automatically autowire here as its already 
 		// a componenet and its dependency is already satisfied
 		
+		//3 steps
+		
 		return new JobBuilder("jobCSV", jobRepository).// name of the job and jobRepository
 				listener(listener)// to listen and do anything when the job starts or the job ends
 				.start(steps).build(); 
