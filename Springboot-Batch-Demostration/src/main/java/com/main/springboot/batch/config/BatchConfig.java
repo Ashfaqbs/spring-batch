@@ -67,7 +67,7 @@ public class BatchConfig {
 								// define a model which will have all the columns in the csv file
 				processor(itemProcessor).writer(writer).build();
 	}
-
+ 
 	@Bean
 	public FlatFileItemReader<Product> reader() {
 
