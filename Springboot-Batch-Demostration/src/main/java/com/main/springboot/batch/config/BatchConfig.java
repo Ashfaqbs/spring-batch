@@ -45,7 +45,9 @@ public class BatchConfig {
 	public Step steps()
 	{
 		
-		return new StepBuilder(null, null)
+		return new StepBuilder("JobStep", jobRepository).
+				chunk(0)//in how many steps or peices of source data will be go
+				.
 	}
 
 }
